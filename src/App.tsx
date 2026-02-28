@@ -43,6 +43,11 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<'report' | 'methodology'>('report');
 
+  const handlePageChange = (page: 'report' | 'methodology') => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-600 font-sans selection:bg-emerald-500/10">
       {/* Lightbox Modal */}
@@ -76,7 +81,7 @@ export default function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setCurrentPage('report')}>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => handlePageChange('report')}>
             <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center">
               <Cpu className="w-5 h-5 text-white" />
             </div>
@@ -92,10 +97,10 @@ export default function App() {
                 <a href="#references" className="hover:text-emerald-600 transition-colors">参考资料</a>
               </>
             ) : (
-              <button onClick={() => setCurrentPage('report')} className="hover:text-emerald-600 transition-colors">返回调研报告</button>
+              <button onClick={() => handlePageChange('report')} className="hover:text-emerald-600 transition-colors">返回调研报告</button>
             )}
             <button 
-              onClick={() => setCurrentPage('methodology')}
+              onClick={() => handlePageChange('methodology')}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${
                 currentPage === 'methodology' 
                 ? 'bg-emerald-600 text-white' 
