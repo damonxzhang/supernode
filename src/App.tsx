@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Cpu, Zap, Thermometer, Network, Globe, TrendingUp, 
   ChevronRight, Activity, Box, Layers, Server, 
   ArrowUpRight, Info, Table as TableIcon, ShieldCheck,
-  FileText
+  FileText, Lock, Key
 } from 'lucide-react';
 import { REPORT_DATA } from './constants';
 import MethodologyPage from './components/MethodologyPage';
+
+const ACCESS_PASSWORD = 'Sinexus2026';
 
 const SectionHeader = ({ title, subtitle, icon: Icon }: any) => (
   <div className="mb-12">
@@ -42,11 +44,104 @@ export default function App() {
   const [activeSolution, setActiveSolution] = useState(REPORT_DATA.solutions[0].id);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<'report' | 'methodology'>('report');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const auth = localStorage.getItem('supernode_auth');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passwordInput === ACCESS_PASSWORD) {
+      setIsAuthenticated(true);
+      localStorage.setItem('supernode_auth', 'true');
+      setError(false);
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
 
   const handlePageChange = (page: 'report' | 'methodology') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-6 font-sans">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="w-full max-w-md"
+        >
+          <div className="bg-white rounded-[2.5rem] p-10 shadow-2xl overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full h-2 bg-emerald-500" />
+            
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6">
+                <Lock className="w-8 h-8 text-emerald-600" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-2">超节点评估系统</h1>
+              <p className="text-slate-500 text-sm font-bold">请输入访问密码以查看深度调研报告</p>
+            </div>
+
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Key className="h-5 w-5 text-slate-400" />
+                </div>
+                <input
+                  type="password"
+                  value={passwordInput}
+                  onChange={(e) => setPasswordInput(e.target.value)}
+                  placeholder="访问密码"
+                  className={`block w-full pl-12 pr-4 py-4 bg-slate-50 border ${
+                    error ? 'border-rose-500 bg-rose-50' : 'border-slate-200 focus:border-emerald-500'
+                  } rounded-2xl text-slate-900 font-bold placeholder:text-slate-400 focus:outline-none transition-all`}
+                  autoFocus
+                />
+              </div>
+
+              {error && (
+                <motion.p 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-rose-500 text-xs font-bold text-center"
+                >
+                  密码错误，请重新输入
+                </motion.p>
+              )}
+
+              <button
+                type="submit"
+                className="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2 group"
+              >
+                <span>进入系统</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </form>
+
+            <div className="mt-10 pt-8 border-t border-slate-100 text-center">
+              <div className="flex items-center justify-center gap-2 text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                <ShieldCheck className="w-3 h-3" />
+                <span>芯桥研究院 • 安全访问控制</span>
+              </div>
+            </div>
+          </div>
+          
+          <p className="mt-8 text-center text-slate-500 text-xs font-mono uppercase tracking-widest">
+            【芯桥研究院】
+          </p>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-600 font-sans selection:bg-emerald-500/10">
