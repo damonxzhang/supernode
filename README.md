@@ -1,11 +1,60 @@
-<div align="center">
+# 超节点智能 (Supernode Intelligence)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## 高密度AI算力基础设施（超节点）深度调研报告
 
-  <h1>Built with AI Studio</h2>
+### 摘要 (Abstract)
+超节点代表 AI 基础设施从“服务器堆叠”向“算力单元整体化”的跃迁，是面向万亿参数大模型时代的核心算力组织形态。其通过高密度机柜与高带宽互联架构，实现算力、网络、电力与散热的系统级协同优化。
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+---
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 市场驱动力 (Market Drivers)
+1. **大模型崛起**: DeepSeek、通义千问、Kimi-K2等大模型的快速发展，对算力保障的需求急剧增加。
+2. **高密度需求**: 单机柜功率从传统3kW增长到目前的100kW以上，AI驱动下密度持续攀升。
+3. **能耗挑战**: 预计到2030年，美国数据中心功耗将达到35GW，对供电和散热提出更高要求。
 
-</div>
+---
+
+### 核心解决方案 (Core Solutions)
+
+#### 1. NVIDIA GB200 NVL72 (国际主流)
+- **架构**: 72 GPU 全 NVLink 互联架构
+- **互联带宽**: 1.8TB/s (GPU-to-GPU)
+- **特性**: 36个Grace CPU + 72个Blackwell GPU，全液冷设计 (115kW IT负载)。
+
+#### 2. 华为 CloudMatrix 384 (国内主流)
+- **架构**: UB总线 + 全互联拓扑
+- **互联带宽**: 4TB/s (芯片总带宽)
+- **特性**: 集成384颗昇腾910C NPU，达芬奇架构 3.0，CANN 8.0。
+
+#### 3. Google TPU 系列 (国际主流)
+- **架构**: 4-Way Rail-Aligned + OCS
+- **特性**: 脉动阵列 (Systolic Array) 矩阵优化，光学互联 (MEMS OCS)。
+
+#### 4. 阿里云磐久 AL128 (国内主流)
+- **架构**: ScaleUp + ScaleOut 混合拓扑
+- **特性**: 单柜支持 128 卡超高密度，无中背板正交架构设计，全液冷散热。
+
+#### 5. 绿算技术国产超节点 (国内主流)
+- **架构**: xPU Scale-Out 跨柜互联架构
+- **特性**: 单柜集成 128 张 xPU 算力卡，FP16 算力高达 128 PFLOPS。
+
+---
+
+### 关键技术 (Key Technologies)
+
+#### 散热技术 (Cooling)
+- **冷板式液冷**: 直接接触散热，目前主流部署。
+- **浸没式液冷**: 完全浸没散热，下一代演进方向。
+- **芯片级液冷**: 微流道刻蚀，理论极限。
+
+#### 供电技术 (Power)
+- **54V 直流供电**: 现行主流标准。
+- **800V 高压直流 (HVDC)**: NVIDIA引领的1MW+机架供电演进方向 (预计2027)。
+
+---
+
+### 参考资料 (References)
+- NVIDIA GB200 NVL72 官方介绍
+- Huawei CloudMatrix384 官方发布
+- 2025 AI 网络技术白皮书
+- 阿里云 ACCL 通信库文档
