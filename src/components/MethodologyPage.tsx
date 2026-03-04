@@ -111,7 +111,7 @@ export default function MethodologyPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {[
-            "https://media.datacenterdynamics.com/media/images/Nvidia_GB200_NVL72.original.png",
+            "/images/supermicro-rack.png",
             "https://media.datacenterdynamics.com/media/images/Airflow_.original.jpg",
             "https://www.deltapowersolutions.com/media/images/products/Precision-cooling-RowCool-70kW-introduction1.jpg",
             "https://cdn.buttercms.com/oVIDuaddRWj6O96GTzcs"

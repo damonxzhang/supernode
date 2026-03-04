@@ -49,10 +49,9 @@ export default function NvidiaFactoryPage() {
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-[3rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
           <div className="relative bg-white rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl">
             <img 
-              src="https://images.nvidia.com/aem-dam/Solutions/Data-Center/blackwell/nvidia-gb200-nvl72-rack-render.jpg" 
+              src="/images/rubin-nvl72.png" 
               alt="NVIDIA Vera Rubin NVL72 Rack" 
               className="w-full h-[500px] object-cover"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent flex flex-col justify-end p-12">
               <div className="flex items-center gap-6 text-white">
@@ -113,10 +112,9 @@ export default function NvidiaFactoryPage() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-blue-500/5 rounded-[2.5rem] blur-2xl group-hover:bg-blue-500/10 transition-colors" />
             <img 
-              src="https://images.nvidia.com/aem-dam/Solutions/Data-Center/blackwell/nvidia-gb200-nvl72-architecture-diagram.jpg" 
+              src="/images/rubin-architecture.png" 
               alt="NVIDIA Vera Rubin Architecture" 
               className="relative rounded-3xl border border-slate-200 shadow-2xl w-full object-cover aspect-video"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/90 backdrop-blur rounded-2xl border border-white/20 shadow-lg">
               <p className="text-xs font-bold text-slate-900">
@@ -168,7 +166,7 @@ export default function NvidiaFactoryPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-lg group">
                 <img 
-                  src="https://images.nvidia.com/aem-dam/Solutions/Data-Center/blackwell/nvidia-blackwell-gpu-render.jpg" 
+                  src="/images/supermicro-rack.png" 
                   alt="NVIDIA Rubin GPU Chip" 
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -180,14 +178,13 @@ export default function NvidiaFactoryPage() {
               </div>
               <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-lg group">
                 <img 
-                  src="https://images.nvidia.com/aem-dam/Solutions/Data-Center/technologies/hbm3e/nvidia-hbm3e-memory-render.jpg" 
-                  alt="HBM4 Memory Technology" 
+                  src="/images/samsung-saint-stacking.png" 
+                  alt="Samsung SAINT 3D Stacking Technology" 
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="p-6 bg-white">
-                  <h4 className="font-bold text-slate-900 mb-2">系统复杂性</h4>
-                  <p className="text-xs text-slate-500 font-bold">包含超过一百万个零件，体现了极致的工程设计。</p>
+                  <h4 className="font-bold text-slate-900 mb-2">3D 堆叠技术 (SAINT)</h4>
+                  <p className="text-xs text-slate-500 font-bold">三星 SAINT 技术支持 SRAM、Logic 及 DRAM 的 3D 堆叠，助力 HBM4 性能突破。</p>
                 </div>
               </div>
             </div>
@@ -252,10 +249,9 @@ export default function NvidiaFactoryPage() {
           <div className="relative">
             <div className="absolute -inset-10 bg-blue-500/5 rounded-full blur-3xl"></div>
             <img 
-              src="https://images.nvidia.com/aem-dam/Solutions/Data-Center/blackwell/nvidia-gb200-grace-blackwell-superchip-render.jpg" 
-              alt="NVIDIA Vera CPU Architecture" 
+              src="/images/vera-rubin-nvl144-cpx.png" 
+              alt="NVIDIA Vera Rubin NVL144 CPX Architecture" 
               className="relative rounded-[3rem] border border-slate-200 shadow-2xl w-full aspect-square object-cover"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 max-w-[240px]">
               <p className="text-sm font-bold text-slate-900 leading-tight">

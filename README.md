@@ -7,6 +7,36 @@
 
 ---
 
+### 本地部署与开发 (Local Development)
+
+本项目已完成本地化部署，并针对图片资源进行了优化。
+
+#### 1. 运行环境
+- **Node.js**: 建议 v18+
+- **框架**: React 19 + Vite 6
+- **样式**: Tailwind CSS
+
+#### 2. 本地启动
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+```
+访问地址: `http://localhost:3000`
+访问密码: `Sinexus2026`
+
+#### 3. 图片资源说明
+项目中的关键技术架构图和设备图已本地化，存储在 `public/images/` 目录下：
+- `rubin-nvl72.png`: Vera Rubin NVL72 机柜渲染图
+- `rubin-architecture.png`: Vera Rubin 架构示意图
+- `supermicro-rack.png`: Supermicro 单机柜全景图
+- `samsung-saint-stacking.png`: 三星 SAINT 3D 堆叠技术图
+- `vera-rubin-nvl144-cpx.png`: Vera Rubin NVL144 CPX 架构细节图
+
+---
+
 ### 市场驱动力 (Market Drivers)
 1. **大模型崛起**: DeepSeek、通义千问、Kimi-K2等大模型的快速发展，对算力保障的需求急剧增加。
 2. **高密度需求**: 单机柜功率从传统3kW增长到目前的100kW以上，AI驱动下密度持续攀升。
