@@ -93,6 +93,47 @@
 
 ---
 
+### NVIDIA AI 工厂 (NVIDIA AI Factory)
+
+#### 1. 总体定位与组成架构
+**Vera Rubin** 是 NVIDIA 面向大型 AI 数据中心和超算级推理 + 训练工作负载的**整体平台（AI supercomputer）**。
+- **核心组件**: Vera CPU, Rubin GPU, NVLink 6 Switch, ConnectX-9 SuperNIC, BlueField-4 DPU, Spectrum-6 Ethernet Switch。
+
+#### 2. Rubin GPU（核心 AI 加速）
+| 规格参数 | Rubin GPU |
+| --- | --- |
+| 架构 | Rubin 新世代 GPU 架构 |
+| 制程 | TSMC 3nm N3P |
+| GPU 内存 | 288 GB HBM4 |
+| 内存带宽 | ~22 TB/s |
+| NVLink | 第 6 代 NVLink: ~3.6 TB/s 每卡 |
+| 计算性能 (NVFP4 推理) | ~50 PFLOPS |
+| 性能提升 vs Blackwell | 推理 ~5×、训练 ~3.5× |
+| 功耗估算 | ~2300 W (TDP) |
+
+#### 3. Vera CPU（AI 协作 CPU）
+| 规格参数 | Vera CPU |
+| --- | --- |
+| 架构 | 定制 ARM “Olympus” 内核 |
+| 物理核心 | 88 核 |
+| 线程支持 | 176 线程 |
+| 内存 | LPDDR5X 支持大容量内存 |
+| 互联 | NVLink-C2C |
+
+#### 4. 集群级指标 (NVL72)
+- **GPU 数量**: 72 × Rubin
+- **CPU 数量**: 36 × Vera
+- **NVFP4 推理**: ~3.6 Exaflops
+- **GPU 内存**: ~20.7 TB HBM4
+- **NVLink 带宽**: ~260 TB/s
+
+#### 5. 关键技术
+- **NVFP4 精度优化**: 深度硬件加速，更省电且更适合大模型推理。
+- **第 6 代 NVLink**: 提供更高带宽的 GPU ↔ GPU ↔ CPU 互联。
+- **整体平台级 co-design**: 软硬件协同的 AI 工厂级系统。
+
+---
+
 ### 访问控制 (Access Control)
 - **访问密码**: `Sinexus2026` (用于内部演示与评估)
 

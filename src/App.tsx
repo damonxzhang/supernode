@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { REPORT_DATA } from './constants';
 import MethodologyPage from './components/MethodologyPage';
+import NvidiaFactoryPage from './components/NvidiaFactoryPage';
 
 const ACCESS_PASSWORD = 'Sinexus2026';
 
@@ -43,7 +44,7 @@ const TechCard = ({ title, desc, stat, icon: Icon }: any) => (
 export default function App() {
   const [activeSolution, setActiveSolution] = useState(REPORT_DATA.solutions[0].id);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState<'report' | 'methodology'>('report');
+  const [currentPage, setCurrentPage] = useState<'report' | 'methodology' | 'nvidia'>('report');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [error, setError] = useState(false);
@@ -67,7 +68,7 @@ export default function App() {
     }
   };
 
-  const handlePageChange = (page: 'report' | 'methodology') => {
+  const handlePageChange = (page: 'report' | 'methodology' | 'nvidia') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -204,6 +205,17 @@ export default function App() {
             >
               <FileText className="w-4 h-4" />
               <span>供电评估</span>
+            </button>
+            <button 
+              onClick={() => handlePageChange('nvidia')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${
+                currentPage === 'nvidia' 
+                ? 'bg-blue-600 text-white' 
+                : 'hover:text-blue-600'
+              }`}
+            >
+              <Cpu className="w-4 h-4" />
+              <span>NVIDIA AI 工厂</span>
             </button>
           </div>
         </div>
@@ -527,7 +539,7 @@ export default function App() {
                 </div>
               </section>
             </motion.div>
-          ) : (
+          ) : currentPage === 'methodology' ? (
             <motion.div
               key="methodology"
               initial={{ opacity: 0, x: 20 }}
@@ -535,6 +547,15 @@ export default function App() {
               exit={{ opacity: 0, x: -20 }}
             >
               <MethodologyPage />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="nvidia"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+            >
+              <NvidiaFactoryPage />
             </motion.div>
           )}
         </AnimatePresence>
