@@ -182,7 +182,7 @@ export default function App() {
             <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center">
               <Cpu className="w-5 h-5 text-white" />
             </div>
-            <span className="font-mono font-bold text-slate-900 tracking-tighter text-xl uppercase">Supernode.OS</span>
+            <span className="font-mono font-bold text-slate-900 tracking-tighter text-xl uppercase">芯桥研究院 - 超节点</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-widest">
             {currentPage === 'report' ? (

@@ -61,18 +61,18 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
         
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 bg-slate-900 rounded-[2.5rem] text-white flex flex-col justify-between h-64 shadow-2xl">
-            <Zap className="w-8 h-8 text-amber-400 opacity-50" />
+          <div className="p-8 bg-slate-50 border border-slate-200 rounded-[2.5rem] text-slate-900 flex flex-col justify-between h-64 shadow-sm">
+            <Zap className="w-8 h-8 text-slate-400 opacity-50" />
             <div>
               <p className="text-4xl font-bold mb-1">16 EFLOPS</p>
-              <p className="text-xs font-mono uppercase tracking-widest text-slate-400">FP4 峰值算力</p>
+              <p className="text-xs font-mono uppercase tracking-widest text-slate-500">FP4 峰值算力</p>
             </div>
           </div>
-          <div className="p-8 bg-red-600 rounded-[2.5rem] text-white flex flex-col justify-between h-64 shadow-2xl">
-            <Share2 className="w-8 h-8 text-white opacity-50" />
+          <div className="p-8 bg-red-50 border border-red-100 rounded-[2.5rem] text-red-900 flex flex-col justify-between h-64 shadow-sm">
+            <Share2 className="w-8 h-8 text-red-600 opacity-50" />
             <div>
               <p className="text-4xl font-bold mb-1">16 PB/s</p>
-              <p className="text-xs font-mono uppercase tracking-widest text-red-200">总互联带宽</p>
+              <p className="text-xs font-mono uppercase tracking-widest text-red-600">总互联带宽</p>
             </div>
           </div>
           <div className="p-8 bg-white border border-slate-200 rounded-[2.5rem] text-slate-900 flex flex-col justify-between h-64 shadow-sm">
@@ -117,16 +117,16 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
               </ul>
             </Card>
           </div>
-          <div className="p-10 bg-slate-900 rounded-[3rem] text-white">
+          <div className="p-10 bg-slate-50 border border-slate-200 rounded-[3rem] text-slate-900 shadow-sm">
             <h3 className="text-2xl font-bold mb-6">核心观点</h3>
-            <p className="text-lg leading-relaxed opacity-90 italic font-bold">
+            <p className="text-lg leading-relaxed text-slate-600 italic font-bold">
               “Atlas 950 超节点至少在未来多年都将保持是全球最强算力的超节点，并且在各项主要能力上都远超业界主要产品。”
             </p>
             <div className="mt-8 flex items-center gap-4">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center font-bold">徐</div>
+              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center font-bold text-white">徐</div>
               <div>
-                <p className="font-bold">徐直军</p>
-                <p className="text-xs text-slate-400">华为轮值董事长</p>
+                <p className="font-bold text-slate-900">徐直军</p>
+                <p className="text-xs text-slate-500">华为轮值董事长</p>
               </div>
             </div>
           </div>
@@ -169,18 +169,18 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
               </p>
             </div>
           </Card>
-          <div className="bg-red-600 rounded-[2.5rem] p-8 text-white">
-            <h4 className="text-xl font-bold mb-8">算力飞跃</h4>
+          <div className="bg-red-50 border border-red-100 rounded-[2.5rem] p-8 text-red-900 shadow-sm">
+            <h4 className="text-xl font-bold mb-8 text-red-600">算力飞跃</h4>
             <div className="space-y-8">
               <div>
-                <p className="text-red-200 text-xs uppercase mb-1">FP8 算力</p>
-                <p className="text-4xl font-bold">8 EFLOPS</p>
+                <p className="text-red-600 text-xs uppercase mb-1">FP8 算力</p>
+                <p className="text-4xl font-bold text-red-900">8 EFLOPS</p>
               </div>
               <div>
-                <p className="text-red-200 text-xs uppercase mb-1">FP4 算力</p>
-                <p className="text-4xl font-bold">16 EFLOPS</p>
+                <p className="text-red-600 text-xs uppercase mb-1">FP4 算力</p>
+                <p className="text-4xl font-bold text-red-900">16 EFLOPS</p>
               </div>
-              <p className="text-sm opacity-80 font-bold italic pt-4 border-t border-white/20">
+              <p className="text-sm text-red-600/80 font-bold italic pt-4 border-t border-red-100">
                 算力规模是昇腾 384 超节点的 20 多倍。
               </p>
             </div>
@@ -199,21 +199,21 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div className="space-y-8">
-            <Card className="bg-slate-900 text-white border-none p-10 relative overflow-hidden">
+            <Card className="p-10 relative overflow-hidden">
               <div className="relative z-10">
                 <Badge variant="danger">Core Processor</Badge>
-                <h3 className="text-3xl font-bold mt-6 mb-4">芯片型号与定位</h3>
-                <p className="text-slate-400 leading-relaxed font-bold">
+                <h3 className="text-3xl font-bold mt-6 mb-4 text-slate-900">芯片型号与定位</h3>
+                <p className="text-slate-500 leading-relaxed font-bold">
                   华为昇腾 950 系列采用同 Die 异构设计，通过搭配不同的自研 HBM 实现场景差异化：
                 </p>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
                     <h4 className="text-red-500 font-bold mb-2">昇腾 950PR</h4>
-                    <p className="text-xs text-slate-400 font-bold leading-relaxed">
+                    <p className="text-xs text-slate-500 font-bold leading-relaxed">
                       面向推理 Prefill 阶段和推荐场景。搭载 HiBL 1.0（低成本 HBM），硬件成本降低 40% 以上。
                     </p>
                   </div>
-                  <div className="p-6 bg-red-600 rounded-2xl">
+                  <div className="p-6 bg-red-600 rounded-2xl shadow-lg shadow-red-200">
                     <h4 className="text-white font-bold mb-2">昇腾 950DT</h4>
                     <p className="text-xs text-red-100 font-bold leading-relaxed">
                       面向推理 Decode 阶段和训练场景。Atlas 950 超节点的核心引擎，极致性能导向。
@@ -221,7 +221,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
                   </div>
                 </div>
               </div>
-              <Cpu className="absolute -right-12 -bottom-12 w-64 h-64 text-white/5 rotate-12" />
+              <Cpu className="absolute -right-12 -bottom-12 w-64 h-64 text-slate-100/50 rotate-12" />
             </Card>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -324,30 +324,30 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-emerald-900 rounded-[2.5rem] p-10 text-white h-full relative overflow-hidden">
+            <div className="bg-emerald-50 border border-emerald-100 rounded-[2.5rem] p-10 text-emerald-900 h-full relative overflow-hidden shadow-sm">
               <div className="relative z-10">
                 <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <TrendingUp className="w-6 h-6 text-emerald-400" /> vs NVIDIA H200
+                  <TrendingUp className="w-6 h-6 text-emerald-600" /> vs NVIDIA H200
                 </h4>
                 <div className="space-y-8">
                   <div>
-                    <p className="text-emerald-400 text-xs uppercase mb-2">HBM 内存容量</p>
+                    <p className="text-emerald-600 text-xs uppercase mb-2">HBM 内存容量</p>
                     <p className="text-3xl font-bold">144 GB</p>
-                    <p className="text-xs text-emerald-300/60 mt-1">H200: 141 GB (略超)</p>
+                    <p className="text-xs text-emerald-500 mt-1">H200: 141 GB (略超)</p>
                   </div>
                   <div>
-                    <p className="text-emerald-400 text-xs uppercase mb-2">芯片互联带宽</p>
-                    <p className="text-3xl font-bold text-emerald-400">2 TB/s</p>
-                    <p className="text-xs text-emerald-300/60 mt-1">H200 NVLink 4: 900 GB/s (远超)</p>
+                    <p className="text-emerald-600 text-xs uppercase mb-2">芯片互联带宽</p>
+                    <p className="text-3xl font-bold text-emerald-600">2 TB/s</p>
+                    <p className="text-xs text-emerald-500 mt-1">H200 NVLink 4: 900 GB/s (远超)</p>
                   </div>
-                  <div className="pt-8 border-t border-white/10">
-                    <p className="text-sm leading-relaxed text-emerald-100 font-bold italic">
+                  <div className="pt-8 border-t border-emerald-100">
+                    <p className="text-sm leading-relaxed text-emerald-700 font-bold italic">
                       “H200 更注重单芯片算力，950DT 则通过强化互联能力为大规模集群优化。”
                     </p>
                   </div>
                 </div>
               </div>
-              <Activity className="absolute -right-8 -bottom-8 w-48 h-48 text-white/5" />
+              <Activity className="absolute -right-8 -bottom-8 w-48 h-48 text-emerald-600/5" />
             </div>
           </div>
 
@@ -443,41 +443,41 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
           <div className="p-2 bg-red-50 rounded-lg">
             <Network className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">四、灵衢协议（UnifiedBus）：万卡互联的神经中枢</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">五、灵衢协议（UnifiedBus）：万卡互联的神经中枢</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="space-y-8">
-            <Card className="bg-slate-900 text-white border-none p-10 relative overflow-hidden">
+            <Card className="p-10 relative overflow-hidden border border-slate-200 shadow-sm">
               <div className="relative z-10">
                 <Badge variant="danger">Protocol Innovation</Badge>
-                <h3 className="text-3xl font-bold mt-6 mb-6">为什么需要全新互联协议？</h3>
+                <h3 className="text-3xl font-bold mt-6 mb-6 text-slate-900">为什么需要全新互联协议？</h3>
                 <div className="space-y-6">
-                  <p className="text-slate-400 leading-relaxed font-bold">
+                  <p className="text-slate-500 leading-relaxed font-bold">
                     传统互联方案面临两个根本性矛盾：
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-5 bg-white/5 rounded-2xl border border-white/10">
-                      <div className="flex items-center gap-2 mb-2 text-amber-400">
+                    <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                      <div className="flex items-center gap-2 mb-2 text-amber-600">
                         <ZapOff className="w-4 h-4" />
                         <span className="text-sm font-bold">电互联瓶颈</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed">高速时联接距离极短，最多支持两柜互联。</p>
+                      <p className="text-xs text-slate-500 leading-relaxed">高速时联接距离极短，最多支持两柜互联。</p>
                     </div>
-                    <div className="p-5 bg-white/5 rounded-2xl border border-white/10">
-                      <div className="flex items-center gap-2 mb-2 text-rose-400">
+                    <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+                      <div className="flex items-center gap-2 mb-2 text-rose-600">
                         <AlertTriangle className="w-4 h-4" />
                         <span className="text-sm font-bold">光互联痛点</span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed">虽然支持长距离，但无法满足万卡级的可靠性需求。</p>
+                      <p className="text-xs text-slate-500 leading-relaxed">虽然支持长距离，但无法满足万卡级的可靠性需求。</p>
                     </div>
                   </div>
-                  <p className="text-sm text-red-400 font-bold italic pt-4 border-t border-white/10">
+                  <p className="text-sm text-red-600 font-bold italic pt-4 border-t border-slate-100">
                     华为因此开创了全新的灵衢（UnifiedBus，UB）协议，支撑万卡级超节点。
                   </p>
                 </div>
               </div>
-              <Network className="absolute -right-12 -bottom-12 w-64 h-64 text-white/5 rotate-12" />
+              <Network className="absolute -right-12 -bottom-12 w-64 h-64 text-slate-100/50 rotate-12" />
             </Card>
 
             <div className="p-10 bg-white border border-slate-200 rounded-[3rem] shadow-sm">
@@ -586,31 +586,31 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-emerald-900 rounded-[2.5rem] p-10 text-white h-full relative overflow-hidden">
+            <div className="bg-emerald-50 border border-emerald-100 rounded-[2.5rem] p-10 text-emerald-900 h-full relative overflow-hidden shadow-sm">
               <div className="relative z-10">
                 <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <ShieldCheck className="w-6 h-6 text-emerald-400" /> 攻克光互联可靠性
+                  <ShieldCheck className="w-6 h-6 text-emerald-600" /> 攻克光互联可靠性
                 </h4>
-                <p className="text-sm leading-relaxed text-emerald-100 font-bold mb-8">
+                <p className="text-sm leading-relaxed text-emerald-700 font-bold mb-8">
                   在协议每一层引入高可靠机制，重新定义光器件和互联芯片。
                 </p>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="text-3xl font-bold text-emerald-400">100 倍</div>
-                    <div className="text-xs text-emerald-200/60 uppercase">可靠性提升</div>
+                    <div className="text-3xl font-bold text-emerald-600">100 倍</div>
+                    <div className="text-xs text-emerald-500 uppercase">可靠性提升</div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="text-3xl font-bold text-emerald-400">200 米</div>
-                    <div className="text-xs text-emerald-200/60 uppercase">最大互联距离</div>
+                    <div className="text-3xl font-bold text-emerald-600">200 米</div>
+                    <div className="text-xs text-emerald-500 uppercase">最大互联距离</div>
                   </div>
-                  <div className="pt-6 border-t border-white/10">
-                    <p className="text-xs text-emerald-300 font-bold italic">
+                  <div className="pt-6 border-t border-emerald-100">
+                    <p className="text-xs text-emerald-600 font-bold italic">
                       “引入百纳秒级故障检测，解决了长距离且高可靠互联的技术难题。”
                     </p>
                   </div>
                 </div>
               </div>
-              <Zap className="absolute -right-8 -bottom-8 w-48 h-48 text-white/5" />
+              <Zap className="absolute -right-8 -bottom-8 w-48 h-48 text-emerald-600/5" />
             </div>
           </div>
 
@@ -642,24 +642,24 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="bg-slate-900 text-white border-none p-10">
-            <h4 className="text-2xl font-bold mb-8 flex items-center gap-3">
-              <BarChart3 className="w-6 h-6 text-red-500" /> 与英伟达 NVLink 的本质区别
+          <Card className="bg-slate-50 border border-slate-200 p-10 shadow-sm">
+            <h4 className="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900">
+              <BarChart3 className="w-6 h-6 text-red-600" /> 与英伟达 NVLink 的本质区别
             </h4>
             <div className="space-y-8">
-              <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                <h5 className="font-bold text-amber-500 mb-3">NVIDIA: NVLink + IB 双栈模式</h5>
-                <p className="text-sm text-slate-400 leading-relaxed">
+              <div className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                <h5 className="font-bold text-amber-600 mb-3">NVIDIA: NVLink + IB 双栈模式</h5>
+                <p className="text-sm text-slate-500 leading-relaxed">
                   设计逻辑是机柜内高密互联。跨机柜依赖 InfiniBand 网络，两套协议并存，存在协议边界和带宽收敛。
                 </p>
               </div>
-              <div className="p-6 bg-red-600/20 rounded-2xl border border-red-600/30">
-                <h5 className="font-bold text-red-500 mb-3">华为灵衢: 协议归一模式</h5>
-                <p className="text-sm text-slate-300 leading-relaxed font-bold">
+              <div className="p-6 bg-red-50 rounded-2xl border border-red-100 shadow-sm">
+                <h5 className="font-bold text-red-600 mb-3">华为灵衢: 协议归一模式</h5>
+                <p className="text-sm text-red-900 leading-relaxed font-bold">
                   打通板内、板间、机架间全部互联层次，统一协议、统一地址空间。8192 卡在逻辑上就是一台计算机，没有协议边界。
                 </p>
               </div>
-              <p className="text-xs text-slate-500 italic leading-relaxed pt-4 border-t border-white/10">
+              <p className="text-xs text-slate-400 italic leading-relaxed pt-4 border-t border-slate-100">
                 “由于受制裁无法使用先进制程，华为选择在互联技术上强力投资，通过三十多年联接技术积累实现系统级算力反超。”
               </p>
             </div>
@@ -689,13 +689,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 5: 与英伟达的对比 */}
+      {/* Section 6: 与英伟达的对比 */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <TableIcon className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">五、与英伟达的对比</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、与英伟达的对比</h2>
         </div>
 
         {/* Added Comparison Image */}
@@ -754,13 +754,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </p>
       </section>
 
-      {/* Section 6: How to solve optical reliability problems */}
+      {/* Section 7: How to solve optical reliability problems */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <ShieldCheck className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、攻克光互联可靠性难题</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、攻克光互联可靠性难题</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
@@ -800,58 +800,58 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 7: Cluster Capacity */}
+      {/* Section 8: Cluster Capacity */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Globe className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、集群扩展能力</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、集群扩展能力</h2>
         </div>
-        <div className="bg-slate-900 rounded-[2.5rem] p-12 text-white overflow-hidden relative shadow-2xl border border-white/5">
+        <div className="bg-slate-50 rounded-[2.5rem] p-12 text-slate-900 overflow-hidden relative shadow-sm border border-slate-200">
           <div className="relative z-10">
-            <h4 className="text-3xl font-bold mb-10 text-white tracking-tight">Atlas 950 SuperCluster 50 万卡集群</h4>
+            <h4 className="text-3xl font-bold mb-10 text-slate-900 tracking-tight">Atlas 950 SuperCluster 50 万卡集群</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="flex items-center gap-6 p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="text-red-500 font-bold text-3xl">64 个</div>
-                  <div className="text-sm text-slate-400 font-bold">Atlas 950 超节点互联</div>
+                <div className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-red-200 transition-colors">
+                  <div className="text-red-600 font-bold text-3xl">64 个</div>
+                  <div className="text-sm text-slate-500 font-bold">Atlas 950 超节点互联</div>
                 </div>
-                <div className="flex items-center gap-6 p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                  <div className="text-red-500 font-bold text-3xl">52 万片</div>
-                  <div className="text-sm text-slate-400 font-bold">昇腾 950DT 芯片组</div>
+                <div className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-red-200 transition-colors">
+                  <div className="text-red-600 font-bold text-3xl">52 万片</div>
+                  <div className="text-sm text-slate-500 font-bold">昇腾 950DT 芯片组</div>
                 </div>
               </div>
               <div className="space-y-8 flex flex-col justify-center">
-                <p className="text-lg text-slate-400 leading-relaxed font-bold">
+                <p className="text-lg text-slate-500 leading-relaxed font-bold">
                   相比当前世界上最大的集群 xAI Colossus：
                 </p>
                 <div className="flex items-center gap-12">
                   <div>
-                    <p className="text-4xl font-bold text-red-500 mb-1">2.5 倍</p>
-                    <p className="text-xs text-slate-500 font-mono uppercase tracking-widest">规模领先</p>
+                    <p className="text-4xl font-bold text-red-600 mb-1">2.5 倍</p>
+                    <p className="text-xs text-slate-400 font-mono uppercase tracking-widest">规模领先</p>
                   </div>
-                  <div className="w-px h-12 bg-white/10"></div>
+                  <div className="w-px h-12 bg-slate-200"></div>
                   <div>
-                    <p className="text-4xl font-bold text-red-500 mb-1">1.3 倍</p>
-                    <p className="text-xs text-slate-500 font-mono uppercase tracking-widest">算力领先</p>
+                    <p className="text-4xl font-bold text-red-600 mb-1">1.3 倍</p>
+                    <p className="text-xs text-slate-400 font-mono uppercase tracking-widest">算力领先</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/10 blur-[120px] -mr-64 -mt-64"></div>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 blur-[120px] -mr-64 -mt-64"></div>
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/5 blur-[100px] -ml-32 -mb-32"></div>
         </div>
       </section>
 
-      {/* Section 8: Power Solutions */}
+      {/* Section 9: Power Solutions */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Zap className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、供电方案深度解析</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">九、供电方案深度解析</h2>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -946,14 +946,14 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 9: Ecosystem & Timeline */}
+      {/* Section 10: Ecosystem & Timeline */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 bg-red-50 rounded-lg">
               <Share2 className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">九、开放生态策略</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">十、开放生态策略</h2>
           </div>
           <div className="space-y-4">
             <div className="p-6 bg-white border border-slate-200 rounded-2xl flex items-start gap-4">
@@ -977,7 +977,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
             <div className="p-2 bg-red-50 rounded-lg">
               <Clock className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">十、发布时间线</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">十一、发布时间线</h2>
           </div>
           <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
             {[
