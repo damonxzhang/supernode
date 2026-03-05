@@ -293,39 +293,41 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
           </div>
           <h2 className="text-3xl font-bold text-slate-900 tracking-tight">五、集群扩展能力</h2>
         </div>
-        <Card className="bg-slate-900 text-white overflow-hidden relative">
+        <div className="bg-slate-900 rounded-[2.5rem] p-12 text-white overflow-hidden relative shadow-2xl border border-white/5">
           <div className="relative z-10">
-            <h4 className="text-2xl font-bold mb-8">Atlas 950 SuperCluster 50 万卡集群</h4>
+            <h4 className="text-3xl font-bold mb-10 text-white tracking-tight">Atlas 950 SuperCluster 50 万卡集群</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
-                <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <div className="text-red-500 font-bold text-2xl">64 个</div>
-                  <div className="text-sm opacity-70">Atlas 950 超节点互联</div>
+                <div className="flex items-center gap-6 p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="text-red-500 font-bold text-3xl">64 个</div>
+                  <div className="text-sm text-slate-400 font-bold">Atlas 950 超节点互联</div>
                 </div>
-                <div className="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <div className="text-red-500 font-bold text-2xl">52 万片</div>
-                  <div className="text-sm opacity-70">昇腾 950DT 芯片组</div>
+                <div className="flex items-center gap-6 p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="text-red-500 font-bold text-3xl">52 万片</div>
+                  <div className="text-sm text-slate-400 font-bold">昇腾 950DT 芯片组</div>
                 </div>
               </div>
-              <div className="space-y-6">
-                <p className="text-sm opacity-70 leading-relaxed font-bold">
+              <div className="space-y-8 flex flex-col justify-center">
+                <p className="text-lg text-slate-400 leading-relaxed font-bold">
                   相比当前世界上最大的集群 xAI Colossus：
                 </p>
-                <div className="flex items-center gap-8">
+                <div className="flex items-center gap-12">
                   <div>
-                    <p className="text-3xl font-bold text-red-500">2.5 倍</p>
-                    <p className="text-xs opacity-50">规模领先</p>
+                    <p className="text-4xl font-bold text-red-500 mb-1">2.5 倍</p>
+                    <p className="text-xs text-slate-500 font-mono uppercase tracking-widest">规模领先</p>
                   </div>
+                  <div className="w-px h-12 bg-white/10"></div>
                   <div>
-                    <p className="text-3xl font-bold text-red-500">1.3 倍</p>
-                    <p className="text-xs opacity-50">算力领先</p>
+                    <p className="text-4xl font-bold text-red-500 mb-1">1.3 倍</p>
+                    <p className="text-xs text-slate-500 font-mono uppercase tracking-widest">算力领先</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/20 blur-[100px] -mr-32 -mt-32"></div>
-        </Card>
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/10 blur-[120px] -mr-64 -mt-64"></div>
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/5 blur-[100px] -ml-32 -mb-32"></div>
+        </div>
       </section>
 
       {/* Section 6: Ecosystem & Timeline */}
