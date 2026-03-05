@@ -437,7 +437,259 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 5: Comparison */}
+      {/* Section 4: UnifiedBus (Lingqu) Protocol */}
+      <section>
+        <div className="flex items-center gap-3 mb-12">
+          <div className="p-2 bg-red-50 rounded-lg">
+            <Network className="w-5 h-5 text-red-600" />
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">四、灵衢协议（UnifiedBus）：万卡互联的神经中枢</h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="space-y-8">
+            <Card className="bg-slate-900 text-white border-none p-10 relative overflow-hidden">
+              <div className="relative z-10">
+                <Badge variant="danger">Protocol Innovation</Badge>
+                <h3 className="text-3xl font-bold mt-6 mb-6">为什么需要全新互联协议？</h3>
+                <div className="space-y-6">
+                  <p className="text-slate-400 leading-relaxed font-bold">
+                    传统互联方案面临两个根本性矛盾：
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="p-5 bg-white/5 rounded-2xl border border-white/10">
+                      <div className="flex items-center gap-2 mb-2 text-amber-400">
+                        <ZapOff className="w-4 h-4" />
+                        <span className="text-sm font-bold">电互联瓶颈</span>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">高速时联接距离极短，最多支持两柜互联。</p>
+                    </div>
+                    <div className="p-5 bg-white/5 rounded-2xl border border-white/10">
+                      <div className="flex items-center gap-2 mb-2 text-rose-400">
+                        <AlertTriangle className="w-4 h-4" />
+                        <span className="text-sm font-bold">光互联痛点</span>
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">虽然支持长距离，但无法满足万卡级的可靠性需求。</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-red-400 font-bold italic pt-4 border-t border-white/10">
+                    华为因此开创了全新的灵衢（UnifiedBus，UB）协议，支撑万卡级超节点。
+                  </p>
+                </div>
+              </div>
+              <Network className="absolute -right-12 -bottom-12 w-64 h-64 text-white/5 rotate-12" />
+            </Card>
+
+            <div className="p-10 bg-white border border-slate-200 rounded-[3rem] shadow-sm">
+              <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <ShieldCheck className="w-6 h-6 text-red-600" /> 协议设计哲学
+              </h4>
+              <p className="text-sm text-slate-500 leading-relaxed font-bold mb-8">
+                万卡级超节点架构应具备六大特征：总线级互联、平等协同、全量池化、协议归一、大规模组网、高可用性。
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {['总线级互联', '平等协同', '全量池化', '协议归一', '大规模组网', '高可用性'].map((item, i) => (
+                  <div key={i} className="px-4 py-3 bg-slate-50 rounded-xl text-xs font-bold text-slate-600 text-center border border-slate-100">
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <p className="mt-8 text-xs text-slate-400 leading-relaxed italic">
+                核心目标：将 I/O、内存访问、计算单元通信融合，实现异构组件池化、统一编址，构建统一计算底座。
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-200">
+              <h4 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <Layers className="w-6 h-6 text-red-600" /> 协议基本组件拆解
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { 
+                    title: "UBPU", 
+                    sub: "灵衢处理单元", 
+                    desc: "超节点基本积木，含 UB Controller 和 UMMU。", 
+                    icon: <Cpu className="w-5 h-5 text-red-600" /> 
+                  },
+                  { 
+                    title: "UB Switch", 
+                    sub: "互联路由器", 
+                    desc: "支持从数十卡到 8192 卡以上的线性扩展。", 
+                    icon: <Share2 className="w-5 h-5 text-blue-600" /> 
+                  },
+                  { 
+                    title: "UB Link", 
+                    sub: "点对点高速通道", 
+                    desc: "百纳秒级低时延和 TB/s 级高带宽链路。", 
+                    icon: <Zap className="w-5 h-5 text-amber-600" /> 
+                  },
+                  { 
+                    title: "UB Fabric", 
+                    sub: "整体互联网络", 
+                    desc: "使域内资源像在同一芯片上一样高效协同。", 
+                    icon: <Globe className="w-5 h-5 text-emerald-600" /> 
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <div className="flex items-center gap-3 mb-3">
+                      {item.icon}
+                      <span className="font-bold text-slate-900">{item.title}</span>
+                    </div>
+                    <p className="text-[10px] text-red-600 font-bold mb-2 uppercase">{item.sub}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 p-6 bg-red-50 rounded-2xl border border-red-100">
+                <h5 className="text-sm font-bold text-red-900 flex items-center gap-2 mb-2">
+                  <Info className="w-4 h-4" /> UMMU：统一内存的核心
+                </h5>
+                <p className="text-xs text-red-700 leading-relaxed">
+                  CPU 可直接通过 UMMU 访问远端 NPU 内存，无需协议转换。这是实现“总线级互联”和“平等协同”的关键机制。
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm">
+              <h4 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Layout className="w-6 h-6 text-blue-600" /> UB-Mesh 拓扑架构
+              </h4>
+              <div className="space-y-6">
+                <div className="flex gap-4 p-5 bg-slate-50 rounded-2xl">
+                  <div className="shrink-0 w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center">
+                    <Box className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-slate-900 text-sm">2D-FullMesh + Clos 混合拓扑</h5>
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                      机柜内 NPU 全直连，机柜间通过 UB Switch 互联。支持以 64 卡为步长按需扩展。
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4 p-5 bg-slate-50 rounded-2xl">
+                  <div className="shrink-0 w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-slate-900 text-sm">8192 卡无收敛全互联</h5>
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                      实现单板内、单板间和机架间的 NPU 全直连，彻底消除通信瓶颈。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="lg:col-span-1 space-y-8">
+            <div className="bg-emerald-900 rounded-[2.5rem] p-10 text-white h-full relative overflow-hidden">
+              <div className="relative z-10">
+                <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
+                  <ShieldCheck className="w-6 h-6 text-emerald-400" /> 攻克光互联可靠性
+                </h4>
+                <p className="text-sm leading-relaxed text-emerald-100 font-bold mb-8">
+                  在协议每一层引入高可靠机制，重新定义光器件和互联芯片。
+                </p>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="text-3xl font-bold text-emerald-400">100 倍</div>
+                    <div className="text-xs text-emerald-200/60 uppercase">可靠性提升</div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-3xl font-bold text-emerald-400">200 米</div>
+                    <div className="text-xs text-emerald-200/60 uppercase">最大互联距离</div>
+                  </div>
+                  <div className="pt-6 border-t border-white/10">
+                    <p className="text-xs text-emerald-300 font-bold italic">
+                      “引入百纳秒级故障检测，解决了长距离且高可靠互联的技术难题。”
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Zap className="absolute -right-8 -bottom-8 w-48 h-48 text-white/5" />
+            </div>
+          </div>
+
+          <div className="lg:col-span-2">
+            <div className="bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden shadow-sm h-full">
+              <div className="p-8 border-b border-slate-100 bg-slate-50/50">
+                <h4 className="text-xl font-bold text-slate-900">灵衢协议关键性能指标</h4>
+              </div>
+              <div className="p-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+                  {[
+                    { label: "总互联带宽", value: "16 PB/s", sub: "全球互联网峰值 10 倍" },
+                    { label: "单卡互联带宽", value: "2 TB/s", sub: "较 910C 提升 2.5 倍" },
+                    { label: "互联时延", value: "2.1 μs", sub: "比业界快 24%" },
+                    { label: "故障检测切换", value: "百纳秒级", sub: "极致可靠性保证" },
+                    { label: "最大互联距离", value: "200 米+", sub: "突破机柜间物理限制" },
+                    { label: "最大互联规模", value: "8192 卡", sub: "逻辑上一台超级计算机" }
+                  ].map((item, i) => (
+                    <div key={i}>
+                      <p className="text-[10px] text-slate-400 uppercase font-mono mb-1">{item.label}</p>
+                      <p className="text-2xl font-bold text-slate-900">{item.value}</p>
+                      <p className="text-[10px] text-red-600 font-bold mt-1">{item.sub}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Card className="bg-slate-900 text-white border-none p-10">
+            <h4 className="text-2xl font-bold mb-8 flex items-center gap-3">
+              <BarChart3 className="w-6 h-6 text-red-500" /> 与英伟达 NVLink 的本质区别
+            </h4>
+            <div className="space-y-8">
+              <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                <h5 className="font-bold text-amber-500 mb-3">NVIDIA: NVLink + IB 双栈模式</h5>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  设计逻辑是机柜内高密互联。跨机柜依赖 InfiniBand 网络，两套协议并存，存在协议边界和带宽收敛。
+                </p>
+              </div>
+              <div className="p-6 bg-red-600/20 rounded-2xl border border-red-600/30">
+                <h5 className="font-bold text-red-500 mb-3">华为灵衢: 协议归一模式</h5>
+                <p className="text-sm text-slate-300 leading-relaxed font-bold">
+                  打通板内、板间、机架间全部互联层次，统一协议、统一地址空间。8192 卡在逻辑上就是一台计算机，没有协议边界。
+                </p>
+              </div>
+              <p className="text-xs text-slate-500 italic leading-relaxed pt-4 border-t border-white/10">
+                “由于受制裁无法使用先进制程，华为选择在互联技术上强力投资，通过三十多年联接技术积累实现系统级算力反超。”
+              </p>
+            </div>
+          </Card>
+
+          <div className="p-10 bg-slate-50 rounded-[3rem] border border-slate-200 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-red-100 rounded-lg">
+                <Share2 className="w-5 h-5 text-red-600" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-900">开放生态策略</h4>
+            </div>
+            <p className="text-sm text-slate-600 leading-relaxed font-bold mb-8">
+              操作系统灵衢组件将全部开源，代码陆续合入 openEuler 等多个上游开源社区。
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
+                <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
+                <p className="text-xs text-slate-500 font-bold">用户可将源代码集成到现有操作系统中</p>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm">
+                <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5" />
+                <p className="text-xs text-slate-500 font-bold">支持自行迭代维护，与开源社区版本同步演进</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: 与英伟达的对比 */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
@@ -502,13 +754,59 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </p>
       </section>
 
-      {/* Section 6: Cluster Capacity */}
+      {/* Section 6: How to solve optical reliability problems */}
+      <section>
+        <div className="flex items-center gap-3 mb-12">
+          <div className="p-2 bg-red-50 rounded-lg">
+            <ShieldCheck className="w-5 h-5 text-red-600" />
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、攻克光互联可靠性难题</h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-8">
+            <p className="text-lg text-slate-600 leading-relaxed font-bold">
+              华为通过在互联协议每一层引入高可靠机制，重新定义光器件和互联芯片，实现了光互联可靠性的代际突破。
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="p-8 bg-white border border-slate-200 rounded-[2.5rem] shadow-sm">
+                <div className="text-4xl font-bold text-red-600 mb-2">100 倍</div>
+                <p className="text-sm text-slate-500 font-bold">光互联可靠性提升</p>
+              </div>
+              <div className="p-8 bg-white border border-slate-200 rounded-[2.5rem] shadow-sm">
+                <div className="text-4xl font-bold text-red-600 mb-2">200 米+</div>
+                <p className="text-sm text-slate-500 font-bold">最大互联距离</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-200 flex flex-col justify-center">
+            <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500" /> 核心解决路径
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex gap-3 text-sm text-slate-600 font-bold">
+                <span className="text-red-600">•</span>
+                <span>在互联协议每一层引入高可靠机制，确保数据传输零丢失。</span>
+              </li>
+              <li className="flex gap-3 text-sm text-slate-600 font-bold">
+                <span className="text-red-600">•</span>
+                <span>引入百纳秒级故障检测，实现故障瞬间感知与切换。</span>
+              </li>
+              <li className="flex gap-3 text-sm text-slate-600 font-bold">
+                <span className="text-red-600">•</span>
+                <span>通过多端口聚合与高密封装技术，解决长距离互联难题。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Cluster Capacity */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Globe className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、集群扩展能力</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、集群扩展能力</h2>
         </div>
         <div className="bg-slate-900 rounded-[2.5rem] p-12 text-white overflow-hidden relative shadow-2xl border border-white/5">
           <div className="relative z-10">
@@ -547,13 +845,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 7: Power Solutions */}
+      {/* Section 8: Power Solutions */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Zap className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、供电方案深度解析</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、供电方案深度解析</h2>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -648,14 +946,14 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 8: Ecosystem & Timeline */}
+      {/* Section 9: Ecosystem & Timeline */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 bg-red-50 rounded-lg">
               <Share2 className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、开放生态策略</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">九、开放生态策略</h2>
           </div>
           <div className="space-y-4">
             <div className="p-6 bg-white border border-slate-200 rounded-2xl flex items-start gap-4">
@@ -679,7 +977,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
             <div className="p-2 bg-red-50 rounded-lg">
               <Clock className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">九、发布时间线</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">十、发布时间线</h2>
           </div>
           <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
             {[
