@@ -4,7 +4,7 @@ import {
   Cpu, Zap, Box, Activity, Layers, Server, 
   TrendingUp, Info, Table as TableIcon, ShieldCheck,
   Database, Network, BarChart3, ArrowUpRight, Globe,
-  Layout, Share2, Clock, CheckCircle2, ZapOff
+  Layout, Share2, Clock, CheckCircle2, ZapOff, AlertTriangle
 } from 'lucide-react';
 
 const Card = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
