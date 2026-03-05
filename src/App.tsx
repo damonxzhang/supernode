@@ -9,6 +9,7 @@ import {
 import { REPORT_DATA } from './constants';
 import MethodologyPage from './components/MethodologyPage';
 import NvidiaFactoryPage from './components/NvidiaFactoryPage';
+import Atlas950Page from './components/Atlas950Page';
 
 const ACCESS_PASSWORD = 'Sinexus2026';
 
@@ -44,7 +45,7 @@ const TechCard = ({ title, desc, stat, icon: Icon }: any) => (
 export default function App() {
   const [activeSolution, setActiveSolution] = useState(REPORT_DATA.solutions[0].id);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState<'report' | 'methodology' | 'nvidia'>('report');
+  const [currentPage, setCurrentPage] = useState<'report' | 'methodology' | 'nvidia' | 'atlas'>('report');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [error, setError] = useState(false);
@@ -68,7 +69,7 @@ export default function App() {
     }
   };
 
-  const handlePageChange = (page: 'report' | 'methodology' | 'nvidia') => {
+  const handlePageChange = (page: 'report' | 'methodology' | 'nvidia' | 'atlas') => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -216,6 +217,17 @@ export default function App() {
             >
               <Cpu className="w-4 h-4" />
               <span>NVIDIA AI 工厂</span>
+            </button>
+            <button 
+              onClick={() => handlePageChange('atlas')}
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${
+                currentPage === 'atlas' 
+                ? 'bg-red-600 text-white' 
+                : 'hover:text-red-600'
+              }`}
+            >
+              <Server className="w-4 h-4" />
+              <span>Huawei Atlas 950</span>
             </button>
           </div>
         </div>
@@ -548,14 +560,23 @@ export default function App() {
             >
               <MethodologyPage />
             </motion.div>
-          ) : (
+          ) : currentPage === 'nvidia' ? (
             <motion.div
               key="nvidia"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
             >
-              <NvidiaFactoryPage />
+              <NvidiaFactoryPage onImageClick={setSelectedImage} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="atlas"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+            >
+              <Atlas950Page onImageClick={setSelectedImage} />
             </motion.div>
           )}
         </AnimatePresence>

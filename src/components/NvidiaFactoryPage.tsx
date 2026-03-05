@@ -26,7 +26,7 @@ const Badge = ({ children, variant = 'default' }: { children: React.ReactNode, v
   );
 };
 
-export default function NvidiaFactoryPage() {
+export default function NvidiaFactoryPage({ onImageClick }: { onImageClick: (url: string) => void }) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export default function NvidiaFactoryPage() {
           </p>
         </div>
         
-        <div className="mt-16 relative group">
+        <div className="mt-16 relative group cursor-zoom-in" onClick={() => onImageClick('/images/rubin-nvl72.png')}>
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-[3rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
           <div className="relative bg-white rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl">
             <img 
@@ -72,6 +72,7 @@ export default function NvidiaFactoryPage() {
               </div>
             </div>
           </div>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-white/40 font-mono uppercase tracking-widest">点击查看大图</div>
         </div>
       </section>
 

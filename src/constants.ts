@@ -50,22 +50,22 @@ export const REPORT_DATA = {
     },
     {
       id: "huawei",
-      name: "华为 CloudMatrix 384",
+      name: "华为 Atlas 950 SuperPoD",
       origin: "国内主流",
-      image: "https://static.cnbetacdn.com/article/2025/0701/624f48eea2720a5.jpg",
-      architectureImage: "https://inews.gtimg.com/om_bt/OoDb_7-rMl7lgJvhntDlU7ZKuQIrQ5OUkybRLOA3Ysc1IAA/641",
+      image: "/images/atlas-950-superpod.png",
+      architectureImage: "/images/atlas-950-comparison.png",
       networkArchitecture: {
-        topology: "UB总线 + 全互联拓扑",
-        details: "采用全互联/全对等拓扑，通过超高速互联总线让 384 颗昇腾芯片形成大规模“超机集群”，实现芯片级低延迟数据交换，构建云级算力池。",
-        bandwidth: "4TB/s (芯片总带宽)"
+        topology: "UB-Mesh 递归直连拓扑",
+        details: "采用灵衢 (UnifiedBus) 协议，支持最大 8192 卡无收敛全互联。通过正交架构实现零线缆电互联，点对点延迟低至 2.1μs。",
+        bandwidth: "16.3 PB/s (总互联带宽)"
       },
       features: [
-        "集成384颗昇腾910C NPU",
-        "达芬奇架构 3.0",
-        "HCCS 处理器缓存一致性互联",
-        "CANN 8.0 异构计算架构"
+        "昇腾 950DT 芯片组 (HiZQ 2.0)",
+        "16 EFLOPS FP4 / 8 EFLOPS FP8 算力",
+        "1152 TB 统一地址空间内存",
+        "全液冷散热 (零漏液设计)"
       ],
-      stats: { 算力: "384 NPU 集群", 功耗: "超高密度", 互联: "HCCS/RoCE" }
+      stats: { 算力: "16 EFLOPS", 功耗: "超高密度", 互联: "UnifiedBus" }
     },
     {
       id: "google",

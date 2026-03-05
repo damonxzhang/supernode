@@ -26,7 +26,7 @@ const Badge = ({ children, variant = 'default' }: { children: React.ReactNode, v
   );
 };
 
-export default function MethodologyPage() {
+export default function MethodologyPage({ onImageClick }: { onImageClick: (url: string) => void }) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -116,8 +116,16 @@ export default function MethodologyPage() {
             "https://www.deltapowersolutions.com/media/images/products/Precision-cooling-RowCool-70kW-introduction1.jpg",
             "https://cdn.buttercms.com/oVIDuaddRWj6O96GTzcs"
           ].map((src, i) => (
-            <div key={i} className="aspect-video rounded-2xl overflow-hidden border border-slate-200">
-              <img src={src} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <div 
+              key={i} 
+              className="aspect-video rounded-2xl overflow-hidden border border-slate-200 cursor-zoom-in group"
+              onClick={() => onImageClick(src)}
+            >
+              <img 
+                src={src} 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
           ))}
         </div>
