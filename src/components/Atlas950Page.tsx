@@ -330,14 +330,115 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 6: Ecosystem & Timeline */}
+      {/* Section 6: Power Solutions */}
+      <section>
+        <div className="flex items-center gap-3 mb-12">
+          <div className="p-2 bg-red-50 rounded-lg">
+            <Zap className="w-5 h-5 text-red-600" />
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、供电方案深度解析</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm">
+              <h4 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <Info className="w-5 h-5 text-blue-500" /> 供电方面的已知信息
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <h5 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                      <ZapOff className="w-4 h-4 text-red-500" /> 单机柜功耗极高
+                    </h5>
+                    <p className="text-sm text-slate-600 leading-relaxed font-bold">
+                      超节点单机柜功耗普遍突破 100kW（如 CM384 达 172.8kW，GB200 约 120-140kW）。Atlas 950 规格更高，预计功耗只高不低。
+                    </p>
+                  </div>
+                  <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <h5 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                      <Layers className="w-4 h-4 text-blue-500" /> Busbar 母排供电架构
+                    </h5>
+                    <p className="text-sm text-slate-600 leading-relaxed font-bold">
+                      采用 Busbar（母排）为各节点提供电源，应对单机柜百千瓦级功耗，具有更低阻抗、更高载流能力。
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <h5 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                      <Globe className="w-4 h-4 text-emerald-500" /> 整体规模估算
+                    </h5>
+                    <p className="text-sm text-slate-600 leading-relaxed font-bold">
+                      64 个超节点占据上万机柜，至少需要两个篮球场大小空间容纳核心机柜、光互连及供电冷却系统。
+                    </p>
+                  </div>
+                  <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                    <h5 className="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                      <Activity className="w-4 h-4 text-cyan-500" /> 全液冷散热替代风冷
+                    </h5>
+                    <p className="text-sm text-slate-600 leading-relaxed font-bold">
+                      全液冷超节点，液冷覆盖率 70% 以上，有效应对单机柜功耗超 100kW 的散热难题，提升系统稳定性。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-red-50 border border-red-100 rounded-[2.5rem] p-10">
+              <h4 className="text-xl font-bold text-red-900 mb-8 flex items-center gap-3">
+                <TrendingUp className="w-5 h-5 text-red-600" /> 供电产业链影响
+              </h4>
+              <p className="text-sm text-red-800/70 mb-8 font-bold">行业机构将供电列为四大核心赛道之一（光 + 液冷 + 供电 + 芯片），重点关注：</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { title: "Power Shelf / PSU", desc: "机柜功耗攀升直接带动高功率电源需求" },
+                  { title: "Busbar 母排系统", desc: "替代传统线缆，适配超高密度供电" },
+                  { title: "高压直流 (HVDC)", desc: "提升供电效率，减少转换损耗" },
+                  { title: "UPS 及配电系统", desc: "整体数据中心电力基础设施同步升级" }
+                ].map((item, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl shadow-sm border border-red-100/50">
+                    <h5 className="font-bold text-red-600 text-sm mb-1">{item.title}</h5>
+                    <p className="text-xs text-slate-500 font-bold">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-[2rem] p-8">
+              <div className="flex items-center gap-3 mb-4 text-amber-700">
+                <AlertTriangle className="w-6 h-6" />
+                <h4 className="font-bold text-lg">⚠️ 重要说明</h4>
+              </div>
+              <p className="text-sm text-amber-900/80 leading-relaxed font-bold space-y-4">
+                华为目前尚未公开 Atlas 950 单节点或满配 160 柜的总功耗/供电规格详细数据。
+                <br /><br />
+                这部分信息预计会在 <span className="text-amber-700">2026 年 Q4</span> 正式上市时随技术白皮书发布。
+                <br /><br />
+                建议参考前代 <span className="text-amber-700 font-black underline underline-offset-4">CM384 (172.8kW/柜)</span> 作为基准下限估算。
+              </p>
+            </div>
+            
+            <div className="p-8 bg-slate-900 rounded-[2rem] text-white">
+              <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">核心洞察</p>
+              <p className="text-lg font-bold leading-relaxed italic text-slate-300">
+                “电力不再是辅助设施，而是算力承载的核心限制因素。Atlas 950 的供电架构设计将直接决定其在大规模集群中的部署效率。”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: Ecosystem & Timeline */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 bg-red-50 rounded-lg">
               <Share2 className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、开放生态策略</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、开放生态策略</h2>
           </div>
           <div className="space-y-4">
             <div className="p-6 bg-white border border-slate-200 rounded-2xl flex items-start gap-4">
@@ -361,7 +462,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
             <div className="p-2 bg-red-50 rounded-lg">
               <Clock className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、发布时间线</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、发布时间线</h2>
           </div>
           <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
             {[
