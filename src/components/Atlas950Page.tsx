@@ -188,13 +188,230 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 3: Architecture */}
+      {/* Section 3: Ascend 950DT Core Engine */}
+      <section>
+        <div className="flex items-center gap-3 mb-12">
+          <div className="p-2 bg-red-50 rounded-lg">
+            <Box className="w-5 h-5 text-red-600" />
+          </div>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">三、昇腾 950DT：核心算力引擎</h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="space-y-8">
+            <Card className="bg-slate-900 text-white border-none p-10 relative overflow-hidden">
+              <div className="relative z-10">
+                <Badge variant="danger">Core Processor</Badge>
+                <h3 className="text-3xl font-bold mt-6 mb-4">芯片型号与定位</h3>
+                <p className="text-slate-400 leading-relaxed font-bold">
+                  华为昇腾 950 系列采用同 Die 异构设计，通过搭配不同的自研 HBM 实现场景差异化：
+                </p>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <h4 className="text-red-500 font-bold mb-2">昇腾 950PR</h4>
+                    <p className="text-xs text-slate-400 font-bold leading-relaxed">
+                      面向推理 Prefill 阶段和推荐场景。搭载 HiBL 1.0（低成本 HBM），硬件成本降低 40% 以上。
+                    </p>
+                  </div>
+                  <div className="p-6 bg-red-600 rounded-2xl">
+                    <h4 className="text-white font-bold mb-2">昇腾 950DT</h4>
+                    <p className="text-xs text-red-100 font-bold leading-relaxed">
+                      面向推理 Decode 阶段和训练场景。Atlas 950 超节点的核心引擎，极致性能导向。
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Cpu className="absolute -right-12 -bottom-12 w-64 h-64 text-white/5 rotate-12" />
+            </Card>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="p-8 bg-white border border-slate-200 rounded-[2.5rem] shadow-sm">
+                <Zap className="w-8 h-8 text-red-600 mb-6" />
+                <h4 className="font-bold text-slate-900 mb-2">核心算力指标</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs text-slate-400 uppercase font-mono">FP8 / MXFP8 / HiF8</p>
+                    <p className="text-2xl font-bold text-slate-900">1 PFLOPS</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400 uppercase font-mono">MXFP4 精度</p>
+                    <p className="text-2xl font-bold text-slate-900">2 PFLOPS</p>
+                  </div>
+                  <p className="text-xs text-red-600 font-bold pt-4 border-t border-slate-100">
+                    互联带宽 2 TB/s，较 910C 提升 2.5 倍
+                  </p>
+                </div>
+              </div>
+              <div className="p-8 bg-white border border-slate-200 rounded-[2.5rem] shadow-sm">
+                <Database className="w-8 h-8 text-blue-600 mb-6" />
+                <h4 className="font-bold text-slate-900 mb-2">自研 HBM：HiZQ 2.0</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-xs text-slate-400 uppercase font-mono">内存容量</p>
+                    <p className="text-2xl font-bold text-slate-900">144 GB</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-400 uppercase font-mono">内存带宽</p>
+                    <p className="text-2xl font-bold text-slate-900">4 TB/s</p>
+                  </div>
+                  <p className="text-xs text-slate-500 font-bold pt-4 border-t border-slate-100 leading-relaxed">
+                    为千亿参数训练和长文本推理提供充足支撑
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-200">
+              <h4 className="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 text-emerald-600" /> 架构创新
+              </h4>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+                    <Layers className="w-5 h-5 text-red-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-slate-900">SIMD/SIMT 双编程模型</h5>
+                    <p className="text-sm text-slate-500 font-bold leading-relaxed">
+                      异构设计：SIMD 高效处理大块向量数据，SIMT 灵活处理碎片化数据。
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+                    <Activity className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-slate-900">内存访问粒度优化</h5>
+                    <p className="text-sm text-slate-500 font-bold leading-relaxed">
+                      颗粒度从 512 字节缩小至 128 字节，大幅提升离散内存访问效率。
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-5 h-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-slate-900">HiF8 混合精度技术</h5>
+                    <p className="text-sm text-slate-500 font-bold leading-relaxed">
+                      华为自研格式，在保持 FP8 高效的同时，精度接近 FP16。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-sm">
+              <h4 className="text-xl font-bold text-slate-900 mb-6">实测性能表现</h4>
+              <div className="space-y-6">
+                <div className="p-6 bg-red-50 rounded-2xl border border-red-100">
+                  <p className="text-xs text-red-600 font-mono uppercase mb-2">DeepSeek V3 训练</p>
+                  <p className="text-2xl font-bold text-slate-900">2.3 倍<span className="text-sm font-normal text-slate-500 ml-2">性能提升 (vs 910C)</span></p>
+                  <p className="text-xs text-slate-500 mt-2 font-bold">千亿参数模型训练周期缩短至 10 天以内</p>
+                </div>
+                <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                  <p className="text-xs text-blue-600 font-mono uppercase mb-2">MoE 模型优化</p>
+                  <p className="text-2xl font-bold text-slate-900">40% +<span className="text-sm font-normal text-slate-500 ml-2">稀疏计算效率提升</span></p>
+                  <p className="text-xs text-slate-500 mt-2 font-bold">通过向量单元重构和访存粒度优化实现</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-1">
+            <div className="bg-emerald-900 rounded-[2.5rem] p-10 text-white h-full relative overflow-hidden">
+              <div className="relative z-10">
+                <h4 className="text-xl font-bold mb-6 flex items-center gap-2">
+                  <TrendingUp className="w-6 h-6 text-emerald-400" /> vs NVIDIA H200
+                </h4>
+                <div className="space-y-8">
+                  <div>
+                    <p className="text-emerald-400 text-xs uppercase mb-2">HBM 内存容量</p>
+                    <p className="text-3xl font-bold">144 GB</p>
+                    <p className="text-xs text-emerald-300/60 mt-1">H200: 141 GB (略超)</p>
+                  </div>
+                  <div>
+                    <p className="text-emerald-400 text-xs uppercase mb-2">芯片互联带宽</p>
+                    <p className="text-3xl font-bold text-emerald-400">2 TB/s</p>
+                    <p className="text-xs text-emerald-300/60 mt-1">H200 NVLink 4: 900 GB/s (远超)</p>
+                  </div>
+                  <div className="pt-8 border-t border-white/10">
+                    <p className="text-sm leading-relaxed text-emerald-100 font-bold italic">
+                      “H200 更注重单芯片算力，950DT 则通过强化互联能力为大规模集群优化。”
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Activity className="absolute -right-8 -bottom-8 w-48 h-48 text-white/5" />
+            </div>
+          </div>
+
+          <div className="lg:col-span-2">
+            <div className="bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden shadow-sm">
+              <div className="p-8 border-b border-slate-100 bg-slate-50/50">
+                <h4 className="text-xl font-bold text-slate-900">芯片路线图 (2026-2028)</h4>
+                <p className="text-sm text-slate-500 mt-1 font-bold">“几乎一年一代算力翻倍的速度” —— 徐直军</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-50/30">
+                      <th className="p-6 text-xs font-mono uppercase tracking-widest text-slate-400">芯片</th>
+                      <th className="p-6 text-xs font-mono uppercase tracking-widest text-slate-400">上市时间</th>
+                      <th className="p-6 text-xs font-mono uppercase tracking-widest text-slate-400">FP8 算力</th>
+                      <th className="p-6 text-xs font-mono uppercase tracking-widest text-slate-400">FP4 算力</th>
+                      <th className="p-6 text-xs font-mono uppercase tracking-widest text-slate-400">内存带宽</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm font-bold">
+                    <tr className="border-b border-slate-50">
+                      <td className="p-6 text-slate-900">昇腾 950PR</td>
+                      <td className="p-6 text-slate-500">2026 Q1</td>
+                      <td className="p-6 text-slate-900">1 PFLOPS</td>
+                      <td className="p-6 text-slate-900">2 PFLOPS</td>
+                      <td className="p-6 text-slate-900">1.6 TB/s</td>
+                    </tr>
+                    <tr className="border-b border-slate-50 bg-red-50/30">
+                      <td className="p-6 text-red-600">昇腾 950DT</td>
+                      <td className="p-6 text-slate-500">2026 Q4</td>
+                      <td className="p-6 text-red-600">1 PFLOPS</td>
+                      <td className="p-6 text-red-600">2 PFLOPS</td>
+                      <td className="p-6 text-red-600">4 TB/s</td>
+                    </tr>
+                    <tr className="border-b border-slate-50">
+                      <td className="p-6 text-slate-900">昇腾 960</td>
+                      <td className="p-6 text-slate-500">2027 Q4</td>
+                      <td className="p-6 text-slate-900">2 PFLOPS</td>
+                      <td className="p-6 text-slate-900">4 PFLOPS</td>
+                      <td className="p-6 text-slate-900">9.6 TB/s</td>
+                    </tr>
+                    <tr>
+                      <td className="p-6 text-slate-900">昇腾 970</td>
+                      <td className="p-6 text-slate-500">2028 Q4</td>
+                      <td className="p-6 text-slate-900">4 PFLOPS</td>
+                      <td className="p-6 text-slate-900">8 PFLOPS</td>
+                      <td className="p-6 text-slate-900">14.4 TB/s</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Architecture */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Layout className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">三、架构创新亮点</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">四、架构创新亮点</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="p-8 bg-white border border-slate-200 rounded-[2rem] shadow-sm">
@@ -220,13 +437,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 4: Comparison */}
+      {/* Section 5: Comparison */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <TableIcon className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">四、与英伟达的对比</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">五、与英伟达的对比</h2>
         </div>
 
         {/* Added Comparison Image */}
@@ -285,13 +502,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </p>
       </section>
 
-      {/* Section 5: Cluster Capacity */}
+      {/* Section 6: Cluster Capacity */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Globe className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">五、集群扩展能力</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、集群扩展能力</h2>
         </div>
         <div className="bg-slate-900 rounded-[2.5rem] p-12 text-white overflow-hidden relative shadow-2xl border border-white/5">
           <div className="relative z-10">
@@ -330,13 +547,13 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 6: Power Solutions */}
+      {/* Section 7: Power Solutions */}
       <section>
         <div className="flex items-center gap-3 mb-12">
           <div className="p-2 bg-red-50 rounded-lg">
             <Zap className="w-5 h-5 text-red-600" />
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">六、供电方案深度解析</h2>
+          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、供电方案深度解析</h2>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -431,14 +648,14 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         </div>
       </section>
 
-      {/* Section 7: Ecosystem & Timeline */}
+      {/* Section 8: Ecosystem & Timeline */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div className="flex items-center gap-3 mb-12">
             <div className="p-2 bg-red-50 rounded-lg">
               <Share2 className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">七、开放生态策略</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、开放生态策略</h2>
           </div>
           <div className="space-y-4">
             <div className="p-6 bg-white border border-slate-200 rounded-2xl flex items-start gap-4">
@@ -462,7 +679,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
             <div className="p-2 bg-red-50 rounded-lg">
               <Clock className="w-5 h-5 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">八、发布时间线</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">九、发布时间线</h2>
           </div>
           <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200">
             {[
