@@ -232,7 +232,7 @@ export default function Atlas950Page({ onImageClick }: { onImageClick: (url: str
         {/* Added Comparison Image */}
         <div 
           className="mb-12 rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-xl bg-white p-4 cursor-zoom-in group"
-          onClick={() => onImageClick('/images/atlas-950-comparison.png')}
+          onClick={() => onImageClick('/images/atlas-950-comparison.jpg')}
         >
           <img 
             src="/images/atlas-950-comparison.jpg" 
